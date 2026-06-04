@@ -18,4 +18,42 @@
     SET column_name = value(jo hame dena hai)
     Where id = 1(jo id pe dena hai);
 
-7) 
+7) Column ka Data Type Change Karna:-
+Pehle:-
+emp_id INT
+
+Ab maan lo VARCHAR karna hai:-
+ALTER TABLE employee
+MODIFY emp_id VARCHAR(20);
+
+8) UNIQUE, Primary key, NOT Null, Default Add Karna:-
+# Unique:-
+- Pehle column normal tha:
+    email VARCHAR(100)
+
+- Ab email duplicate nahi hona chahiye:
+    ALTER TABLE employee
+    ADD UNIQUE (email);
+
+- Ya constraint name ke saath:
+    ALTER TABLE employee
+    ADD CONSTRAINT uk_email UNIQUE (email);
+
+# PRIMARY KRY:-
+- Agar pehle primary key nahi thi:
+    ALTER TABLE employee
+    ADD PRIMARY KEY (emp_id);
+
+# NOT NULL :-
+- Pehle NULL allow tha:
+    ALTER TABLE employee
+    MODIFY name VARCHAR(50) NOT NULL;
+
+Ab name blank nahi reh sakta.
+
+# DEFAULT :-
+ALTER TABLE employee
+MODIFY salary INT DEFAULT 10000;
+
+Agar salary nahi doge to automatically 10000 aa jayegi.
+

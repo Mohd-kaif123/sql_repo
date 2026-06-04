@@ -9,4 +9,13 @@
 4) Kisi database ke andar kitna tables hai wo dekhne ke liye:-
     show tables;
 
-5) 
+5) Table me new Coloumn add karne ke liye :-
+    ALTER TABLE table_name
+    ADD coloumn_name datatype;
+    
+6) Agar already table hai aur usme ham New coloumn add kare hai, tab usme value add karenge aese:-
+    UPDATE table_name
+    SET column_name = value(jo hame dena hai)
+    Where id = 1(jo id pe dena hai);
+
+7) 

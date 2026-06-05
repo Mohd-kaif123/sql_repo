@@ -51,12 +51,15 @@
 
 # command INNER JOIN:-
 SELECT 
-    students.name, 
-    subject.subject_name, 
-    marks.obtained_marks 
-FROM marks 
+    students.name,     # students table se name coloumn lo
+    subject.subject_name,  # subjects table se subject_name coloumn lo
+    marks.obtained_marks  # marks table se obtained_marks coloumn lo
+FROM marks     # Shuruwaat marks table se karo — kyunki yahi center hai
+marks mein student_id aur subject_id dono hain — yahi dono taraf jaayenge             
 INNER JOIN students ON marks.student_id = students.id 
 INNER JOIN subject ON marks.subject_id = subject.subject_id;
+
+
 
 # Output:-
 +--------+--------------+----------------+
@@ -70,3 +73,19 @@ INNER JOIN subject ON marks.subject_id = subject.subject_id;
 | Hassan | History      |             84 |
 | Faraz  | History      |             65 |
 +--------+--------------+----------------+
+
+# 1.INNER JOIN students ON marks.student_id = students.id
+Isko 3 parts mein todo:
+Part                                    Matlab 
+INNER JOIN students                     students table ko saath lao
+ON                                      condition kya hai milane ki
+marks.student_id = students.id          marks ki student_id ko students ki id se milao
+
+Real mein kya hota hai?
+marks mein student_id = 1 hai → students mein jao → id = 1 dhundho → "Kaif" mila → le aao!
+
+# 2.INNER JOIN subjects ON marks.subject_id = subjects.subject_id
+Same kaam — subjects ke liye:
+
+marks mein subject_id = 1 hai → subjects mein jao → subject_id = 1 dhundho → "Mathematics" mila → le aao!
+

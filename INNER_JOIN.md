@@ -89,3 +89,11 @@ Same kaam — subjects ke liye:
 
 marks mein subject_id = 1 hai → subjects mein jao → subject_id = 1 dhundho → "Mathematics" mila → le aao!
 
+#######################################################################
+
+INNER JOIN ka rule — Interview mein zarur poochha jaata hai!
+INNER JOIN sirf wahi rows laata hai
+jahan DONO tables mein match hota hai!
+
+Agar koi student hai jiska marks table mein koi entry nahi — woh nahi aayega!
+Agar marks mein koi student_id hai jo students table mein nahi — woh bhi nahi aayega!

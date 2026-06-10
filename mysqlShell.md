@@ -57,3 +57,5 @@ MODIFY salary INT DEFAULT 10000;
 
 Agar salary nahi doge to automatically 10000 aa jayegi.
 
+9) 
+

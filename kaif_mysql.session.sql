@@ -1,17 +1,30 @@
+--####----Practise INNER Join----####
+orders table:                       customers table:
+order_id | customer_id |        | amount  | customer_id    | customer_name | city
+---------|-------------|        |---------|----------------|---------------|------
+1001     | C01         |        | ₹2,400  |    C01         | Priya Sharma  | Mumbai
+1002     | C02         |        | ₹850    |    C02         | Rahul Mehta   | Delhi
+1003     | C03         |        | 5,200   |    C03         | Anjali Singh  | Pune
+1004     | C99         |        | ₹1,100  |    C04         | Vikram Nair   | Chennai
+
+--step 1: use database:-
 USE practise;
-CREATE TABLE students ( 
-    id INT primary key auto_increment,
-    name varchar(30),
-    age INT
+
+--step 2: create table order :-
+
+CREATE TABLE orders(
+    order_id INT,
+    amount INT,
+    customer_name VARCHAR(30)
 );
 
-INSERT INTO students VALUES (1,'kaif',23);
-ALTER TABLE students
-add address varchar(100),
-add fees int,
-add phone_number varchar(15);
-SELECT * from students;
+--step 3: value insert karo order table me:-
 
-UPDATE students
-SET address = 'mumbai', fees = 20000, phone_number = '+91706668215'
-where id = 1;
+insert into orders values
+    (1001,2400,'priya'),
+    (1002,850,'Rahil'),
+    (1003,5200,'kaif');
+
+-- Dekhne ke liye bana ki nahi
+SELECT * FROM orders;
+

@@ -155,18 +155,6 @@ from products p
 Inner join order_items o ON o.product_id = p.product_id;
 
 
----###__Level 2 — Intermediate (2-3 concepts combine karo)
+##############################################################################################################
 
-1) Har customer ka total spend dikhao (SUM(amount)), sirf unhe jo actually orders mein hain. 
-    Result ko descending order mein sort karo.
 
-SELECT p.product_name, SUM(p.price) 
-FROM products p 
-INNER JOIN order_items o ON p.product_id = o.product_id 
-GROUP BY p.product_name
-ORDER BY SUM(p.price) DESC;
-
-2) order_items, products, aur orders — teeno tables join karke dikhao: 
-    order_id, customer_id, product_name, qty, aur total_line_value (qty × price).
-3) Kaunse products abhi tak kisi order mein nahi hain? 
-    (Hint: LEFT JOIN + IS NULL trick use karo) ye samjhao kaise karo hint do

@@ -52,6 +52,17 @@ LEFT JOIN order_items o ON o.product_id = p.product_id;
 Q5. Sirf woh products nikalo jo abhi tak kisi bhi order mein nahi hain.
 (Hint: Q4 ke baad WHERE mein NULL check karo)
 
+SELECT p.product_id, p.product_name, o.order_id, o.qty
+from products p
+LEFT JOIN order_items o ON o.product_id = p.product_id
+where o.order_id is NULL;
+
+
+Q6. Teen tables — customers, orders, order_items — LEFT JOIN karo.
+Dikhao: customer_name, order_id, product_id
+Woh customers bhi aane chahiye jinke koi orders nahi hain — unke liye order_id aur product_id NULL hoga.
+(Hint: pehle customers LEFT JOIN orders, phir us result pe LEFT JOIN order_items)
+
 
 
 

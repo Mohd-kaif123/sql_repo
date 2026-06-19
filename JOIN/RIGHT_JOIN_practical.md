@@ -62,6 +62,35 @@ P03        | Headphones   | 2400  | Electronics|    | 1002     | P01        | 1
 P04        | Charger      | 800   | Accessories|    | 1003     | P02        | 3
 
 
+# Level 1 — Beginner (sirf RIGHT JOIN, do tables)
+
 Q1. Saare customers dikhao — chahe unhone order diya ho ya nahi. Columns: customer_name, city, order_id, amount.
 
+SELECT c.customer_name, c.city, o.order_id, o.amount
+FROM customers c
+RIGHT JOIN orders o ON o.customer_id = c.customer_id;
+
+Q2. Saare products dikhao — chahe wo kisi order mein ho ya na ho. order_items LEFT mein rakho, products RIGHT mein. Columns: product_name, price, order_id.
+
+SELECT p.product_id, p.product_name, p.price, o.order_id
+FROM products p
+RIGHT JOIN order_items o ON o.product_id = p.product_id;
+
+Q3. Sirf woh customers dikhao jinke paas koi bhi order nahi hai. (Hint: RIGHT JOIN ke baad WHERE o.order_id IS NULL)
+
+SELECT c.customer_id, c.customer_name, o.order_id
+FROM orders o   
+RIGHT JOIN customers c ON c.customer_id=o.customer_id
+where o.order_id is NULL;
+
+# Level 2 — Intermediate (condition + filtering)
+Q4. Saare customers dikhao with their orders — lekin result mein sirf Mumbai aur Delhi ke customers ho. Jo in cities ke customers ne order nahi diya unke liye NULL aaye.
+
+SELECT c.customer_id, c.customer_name, c.city, o.order_id
+FROM orders o 
+RIGHT JOIN customers c ON c.customer_id=o.customer_id
+WHERE c.city IN ('Mumbai','Chennai')
+AND o.order_id is NULL;
+
+Q5. Saare products dikhao order_items se RIGHT JOIN karke — lekin sirf Electronics category ke products dikhao. Kaunse electronics kisi order mein nahi hain wo bhi dikhna chahiye.
 

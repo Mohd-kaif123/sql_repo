@@ -42,6 +42,7 @@ WHERE o.order_id IS NULL;
 -- Result: sirf Vikram Nair — usne koi order nahi diya
 
 ###############################################################################################
+# PRACTICALS:-
 
 orders table:                              customers table:
 order_id | customer_id | amount  |     | customer_id    | customer_name | city
@@ -60,5 +61,7 @@ P02        | Phone        | 12000 | Electronics|    | 1001     | P03        | 1
 P03        | Headphones   | 2400  | Electronics|    | 1002     | P01        | 1
 P04        | Charger      | 800   | Accessories|    | 1003     | P02        | 3
 
+
+Q1. Saare customers dikhao — chahe unhone order diya ho ya nahi. Columns: customer_name, city, order_id, amount.
 
 

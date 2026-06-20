@@ -106,4 +106,10 @@ FROM order_items o
 RIGHT JOIN products p ON p.product_id = o.product_id
 where p.price > 5000;
 
-# 
+# Level 3 — Advanced (teen tables + conditions)
+Q7. Teen tables join karo — orders, order_items, products — products ko RIGHT mein rakho. Saare products dikhao with order_id, qty. Jo products kisi order mein nahi hain unke liye NULL aaye.
+
+SELECT p.product_id, p.product_name, oi.order_id, o.amount
+FROM orders o
+RIGHT JOIN order_items oi ON oi.order_id = o.order_id
+RIGHT JOIN products p ON p.product_id = oi.product_id;

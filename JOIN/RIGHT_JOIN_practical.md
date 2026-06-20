@@ -94,3 +94,16 @@ AND o.order_id is NULL;
 
 Q5. Saare products dikhao order_items se RIGHT JOIN karke — lekin sirf Electronics category ke products dikhao. Kaunse electronics kisi order mein nahi hain wo bhi dikhna chahiye.
 
+SELECT p.product_id, p.product_name, p.category, o.order_id
+FROM order_items o
+RIGHT JOIN products p ON p.product_id=o.product_id
+WHERE p.category = 'Electronics';
+
+Q6. order_items aur products ka RIGHT JOIN karo — sirf woh products dikhao jinka price ₹5000 se zyada hai, chahe order hua ho ya na ho.
+
+SELECT p.product_id, p.product_name, p.category,p.price, o.order_id
+FROM order_items o
+RIGHT JOIN products p ON p.product_id = o.product_id
+where p.price > 5000;
+
+# 

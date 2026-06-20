@@ -113,3 +113,15 @@ SELECT p.product_id, p.product_name, oi.order_id, o.amount
 FROM orders o
 RIGHT JOIN order_items oi ON oi.order_id = o.order_id
 RIGHT JOIN products p ON p.product_id = oi.product_id;
+
+Q8. Chaar tables join karo — orders, customers, order_items, products. Saare customers dikhao with unka product_name aur qty. Jo customers ne order nahi diya unke liye NULL aaye. (Hint: customers ko sabse last mein RIGHT JOIN karo)
+
+SELECT c.customer_id, c.customer_name, p.product_name, oi.qty
+FROM orders o 
+RIGHT JOIN order_items oi ON oi.order_id = o.order_id
+RIGHT JOIN products p ON p.product_id = oi.product_id
+RIGHT JOIN customers c ON c.customer_id = o.customer_id;
+
+Q9. Q3 ka extension — sirf woh customers dikhao jinke paas koi order nahi hai, aur unki city bhi dikhao. Result ko city ke alphabetical order mein sort karo. (Hint: ORDER BY use karo — ORDER BY c.city)
+
+

@@ -57,5 +57,36 @@ MODIFY salary INT DEFAULT 10000;
 
 Agar salary nahi doge to automatically 10000 aa jayegi.
 
-9) 
+9) Group BY and count Concept:-
+SELECT stream, COUNT(*)   - Pahale select ke baad coloumn select kari aur wahi couloumn 
+FROM students               group by ke aage denge
+GROUP BY stream;          - from ke baad table name
+
+10) yeha ham count ko descending order me kar rahe hai:-
+SELECT stream, COUNT(*)
+FROM students
+GROUP BY stream
+ORDER BY COUNT(*) DESC;
+
+11) sum karne ke liye:-
+SELECT SUM(obtained_marks)
+FROM marks;
+
+12) column me average nikalna:-
+SELECT stream, AVG(age)
+FROM students
+GROUP BY stream;
+
+13)  
+SELECT kya dikhana hai
+
+FROM kis table se
+
+WHERE kaunse records chahiye
+
+GROUP BY kis basis par group banana hai
+
+ORDER BY result ko kaise sort karna hai
+
+14) 
 

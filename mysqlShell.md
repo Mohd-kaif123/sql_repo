@@ -14,9 +14,21 @@
     ADD coloumn_name datatype;
     
 6) Agar already table hai aur usme ham New coloumn add kare hai, tab usme value add karenge aese:-
-    UPDATE table_name
-    SET column_name = value(jo hame dena hai)
-    Where id = 1(jo id pe dena hai);
+method1:- UPDATE table_name
+          SET column_name = value(jo hame dena hai)
+          Where id = 1(jo id pe dena hai);
+    
+method 2:- UPDATE students      
+SET subject_name = case id          
+    WHEN 2 then 'Mathematics'
+    WHEN 3 THEN 'English'
+    WHEN 4 then 'Computer'
+    WHEN 5 THEN 'History'
+    WHEN 6 THEN 'science'
+    WHEN 7 THEN 'Mathematics'
+    WHEN 8 THEN 'English'
+END
+WHERE id IN (2, 3, 4, 5, 6, 7, 8);
 
 7) Column ka Data Type Change Karna:-
 Pehle:-

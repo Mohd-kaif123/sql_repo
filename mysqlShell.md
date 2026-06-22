@@ -100,5 +100,15 @@ GROUP BY kis basis par group banana hai
 
 ORDER BY result ko kaise sort karna hai
 
-14) 
+14) Golden Rule: SELECT mein jo bhi column likho — ya toh wo GROUP BY mein hona chahiye, ya kisi aggregate function ke andar. Bas yahi ek rule yaad rakho. 
+-- GALAT ❌
+SELECT customer_id, amount, SUM(amount)  -- amount GROUP BY mein nahi hai
+FROM orders
+GROUP BY customer_id;
 
+-- SAHI ✅
+SELECT customer_id, SUM(amount)
+FROM orders
+GROUP BY customer_id;
+
+15) 
